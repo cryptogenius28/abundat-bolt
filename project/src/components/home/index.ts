@@ -1,0 +1,11 @@
+export { HeroSlider } from './HeroSlider';
+export { TrustBar } from './TrustBar';
+export { FlashSale } from './FlashSale';
+export { CategoryGrid } from './CategoryGrid';
+export { FeaturedProducts } from './FeaturedProducts';
+export { PromoBanners } from './PromoBanners';
+export { NewArrivals } from './NewArrivals';
+export { BlogPreview } from './BlogPreview';
+export { TopBrands } from './TopBrands';
+export { Testimonials } from './Testimonials';
+export { RecentlyViewed } from './RecentlyViewed';

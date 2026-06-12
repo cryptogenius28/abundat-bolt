@@ -1,0 +1,4 @@
+-- Toys Products
+INSERT INTO products (sku, title, description, brand, price, sale_price, category_id, images, variants, tags, stock_qty, fulfillment_type, is_featured, rating, review_count) VALUES
+('TOYS-LG-001', 'Classic LEGO Architecture Skyline Set', 'Build iconic city skylines with this detailed LEGO Architecture set.', 'LEGO', 99.99, NULL, '18d92951-2c62-4046-bb24-5d782a8a2a90', ARRAY['https://images.unsplash.com/photo-1558061953-81867f9a63a0?w=800&q=80'], '[]'::jsonb, ARRAY['lego', 'building'], 45, 'warehouse', true, 4.8, 567),
+('TOYS-RC-002', 'Remote Control Stunt Car', 'High-speed RC stunt car with 360 spins and all-terrain tires.', 'SpeedRacer', 49.99, 39.99, '18d92951-2c62-4046-bb24-5d782a8a2a90', ARRAY['https://images.unsplash.com/photo-1594787318454-1ce83bfd9c3b?w=800&q=80'], '[]'::jsonb, ARRAY['rc car', 'stunt'], 80, 'dropship', true, 4.5, 234);

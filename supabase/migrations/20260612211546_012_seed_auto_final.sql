@@ -1,0 +1,4 @@
+-- Remaining Automotive Products
+INSERT INTO products (sku, title, description, brand, price, sale_price, category_id, images, variants, tags, stock_qty, fulfillment_type, is_featured, rating, review_count) VALUES
+('AUTO-VC-009', 'Car Vacuum Cleaner 12V', 'Powerful 12V car vacuum with LED light and attachments.', 'CleanCar', 39.99, NULL, '13fc0785-7a2d-4cf7-a0cf-2170d41a896e', ARRAY['https://images.unsplash.com/photo-1583121274602-9e28fd2d5b5d?w=800&q=80'], '[]'::jsonb, ARRAY['vacuum', 'car cleaner'], 75, 'dropship', false, 4.4, 145),
+('AUTO-FM-010', 'Bluetooth FM Transmitter', 'Bluetooth FM transmitter with USB charging and hands-free calling.', 'AudioLink', 24.99, NULL, '13fc0785-7a2d-4cf7-a0cf-2170d41a896e', ARRAY['https://images.unsplash.com/photo-1583121274602-9e28fd2d5b5d?w=800&q=80'], '[]'::jsonb, ARRAY['fm transmitter', 'bluetooth'], 300, 'warehouse', false, 4.2, 234);

@@ -1,0 +1,13 @@
+export { HomePage } from './HomePage';
+export { ShopPage } from './ShopPage';
+export { CategoryPage } from './CategoryPage';
+export { ProductDetailPage } from './ProductDetailPage';
+export { CartPage } from './CartPage';
+export { WishlistPage } from './WishlistPage';
+export { CheckoutPage } from './CheckoutPage';
+export { OrderConfirmationPage } from './OrderConfirmationPage';
+export { LoginPage } from './LoginPage';
+export { RegisterPage } from './RegisterPage';
+export * from './static';
+export * from './account';
+export * from './admin';

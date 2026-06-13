@@ -7,11 +7,12 @@ import { getFeaturedProducts, Product } from '../../lib/supabase';
 export function FeaturedProducts() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     getFeaturedProducts(8)
       .then(setFeaturedProducts)
-      .catch(console.error)
+      .catch((err) => setError(err.message || 'Failed to load products'))
       .finally(() => setLoading(false));
   }, []);
 
@@ -33,6 +34,24 @@ export function FeaturedProducts() {
             {[...Array(8)].map((_, i) => (
               <div key={i} className="aspect-square rounded-xl bg-ink-200 animate-pulse" />
             ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="section-padding bg-ink-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center py-8">
+            <p className="text-red-500 mb-2">Error loading products: {error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="text-brand underline"
+            >
+              Retry
+            </button>
           </div>
         </div>
       </section>

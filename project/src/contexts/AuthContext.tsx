@@ -61,7 +61,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     user: null,
     addresses: [],
     isAuthenticated: false,
-    isLoading: true,
+    isLoading: false, // Start with false so the app renders immediately
     isAdmin: false,
   });
 
@@ -78,6 +78,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Subscribe to auth state changes
   useEffect(() => {
+    // Check for existing session in background
+    checkSession();
+
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
@@ -94,9 +97,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     });
 
-    // Check for existing session
-    checkSession();
-
     return () => {
       subscription.unsubscribe();
     };
@@ -110,11 +110,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       if (session?.user) {
         await loadUserProfile(session.user.id, session.user.email || '');
-      } else {
-        setState((prev) => ({ ...prev, isLoading: false }));
       }
-    } catch {
-      setState((prev) => ({ ...prev, isLoading: false }));
+    } catch (error) {
+      console.error('Error checking session:', error);
     }
   }
 

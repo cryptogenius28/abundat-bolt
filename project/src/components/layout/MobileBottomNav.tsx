@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Hop as Home, Grid3x2 as Grid3X3, Search, Heart, ShoppingBag } from 'lucide-react';
+import { Hop as Home, LayoutGrid, Search, Heart, ShoppingBag } from 'lucide-react';
 import { useCartStore, useWishlistStore } from '../../stores';
 
 export function MobileBottomNav() {
@@ -12,7 +12,7 @@ export function MobileBottomNav() {
 
   const navItems = [
     { path: '/', icon: Home, label: 'Home' },
-    { path: '/shop', icon: Grid3X3, label: 'Shop' },
+    { path: '/shop', icon: LayoutGrid, label: 'Shop' },
     { path: '/search', icon: Search, label: 'Search' },
     {
       path: '/wishlist',
